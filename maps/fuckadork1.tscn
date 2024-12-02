@@ -1,9 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://qh0qaglypx38"]
+[gd_scene load_steps=3 format=3 uid="uid://qh0qaglypx38"]
 
-[ext_resource type="Script" path="res://scripts/maps/fuckadork_1.gd" id="1_q4tw6"]
+[ext_resource type="Script" path="res://classes/map_handler.gd" id="1_q4tw6"]
+[ext_resource type="PackedScene" uid="uid://2uoum5pe54oo" path="res://objects/enemy.tscn" id="2_7v8ah"]
 
 [node name="Fuckadork1" type="StaticBody2D"]
 script = ExtResource("1_q4tw6")
+music_name = "KarukiSpirits"
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(128, 576)
+
+[node name="BackgroundItems" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Enemy" parent="Objects" instance=ExtResource("2_7v8ah")]
+position = Vector2(768, 576)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-24, 696, -24, 480, 1352, 464, 1336, 696)
+position = Vector2(0, -720)
+scale = Vector2(1, 2.25)
+polygon = PackedVector2Array(0, 576, 1408, 576, 1408, 640, 0, 640)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(0, -64)
+polygon = PackedVector2Array(576, 512, 576, 384, 896, 384, 896, 400, 592, 400, 592, 512)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(896, 336, 1280, 336, 1280, 192, 1264, 192, 1264, 320, 896, 320)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(816, 576, 816, 536, 864, 536, 864, 576)

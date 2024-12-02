@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b37anic6p4iva"]
+[gd_scene load_steps=3 format=3 uid="uid://b37anic6p4iva"]
 
 [ext_resource type="Texture2D" uid="uid://5ft3vqj1htp7" path="res://icon.svg" id="1_mi0y6"]
+[ext_resource type="Script" path="res://objects/touchscreen.gd" id="1_uhb3p"]
 
-[node name="Normal" type="Node2D"]
-position = Vector2(-16, 16)
+[node name="Normal" type="Node"]
+script = ExtResource("1_uhb3p")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(40, 392)

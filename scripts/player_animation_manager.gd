@@ -6,13 +6,13 @@ extends Node
 func _ready() -> void:
 	pass
 
-func get_dir():
+@export var get_dir = func():
 	if animator.flip_h:
 		return -1
 
 	return 1
 
-func set_dir(dir):
+@export var set_dir = func(dir):
 	if dir != 0:
 		animator.flip_h = dir < 0
 
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 	if player.velocity.x != 0:
 		animation = "walk"
-		set_dir(player.velocity.x)
+		set_dir.call(player.velocity.x)
 
 	if abs(player.velocity.x) >= 500:
 		animation = "run"

@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://2uoum5pe54oo"]
+
+[ext_resource type="Script" path="res://objects/enemy.gd" id="1_v0dpq"]
+[ext_resource type="Texture2D" uid="uid://cdj1rsjsob8bn" path="res://assets/sprites/placeholder/Tur_green.png" id="2_upy7p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nugck"]
+atlas = ExtResource("2_upy7p")
+region = Rect2(0, 9, 18, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66g8b"]
+atlas = ExtResource("2_upy7p")
+region = Rect2(20, 9, 18, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wle0o"]
+atlas = ExtResource("2_upy7p")
+region = Rect2(40, 9, 18, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l583y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nugck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66g8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wle0o")
+}],
+"loop": true,
+"name": &"turtle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ufag"]
+size = Vector2(12, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va6xp"]
+size = Vector2(10, 9)
+
+[node name="Enemy" type="CharacterBody2D"]
+visibility_layer = 2
+script = ExtResource("1_v0dpq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_l583y")
+animation = &"turtle"
+autoplay = "turtle"
+frame_progress = 0.860731
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(13, 0)
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_6ufag")
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_va6xp")

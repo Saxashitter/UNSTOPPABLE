@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://7dtrh58iexdt"]
+
+[node name="Multiplayer" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 608.0
+offset_right = 448.0
+offset_bottom = 640.0
+text = "Join Server
+"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 568.0
+offset_right = 448.0
+offset_bottom = 600.0
+text = "Host Server
+"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 224.0
+offset_top = 336.0
+offset_right = 464.0
+offset_bottom = 384.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 224.0
+offset_top = 400.0
+offset_right = 464.0
+offset_bottom = 448.0

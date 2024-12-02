@@ -156,6 +156,11 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+visibility_layer = 4
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_max_angle = 1.03847
+floor_snap_length = 16.0
 script = ExtResource("1_437gv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -164,6 +169,9 @@ animation = &"fall"
 autoplay = "idle"
 offset = Vector2(0, -32)
 script = ExtResource("23_ufyeh")
+
+[node name="Animator" type="Node" parent="."]
+script = ExtResource("15_irrxi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
@@ -174,9 +182,6 @@ libraries = {
 "": SubResource("AnimationLibrary_maaox")
 }
 autoplay = "idle"
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("15_irrxi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -80)
